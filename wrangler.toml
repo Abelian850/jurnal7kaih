@@ -1,0 +1,14 @@
+name = "jurnal7kaih"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+# Ganti database_id di bawah dengan ID asli setelah `wrangler d1 create jurnal7kaih-db`
+[[d1_databases]]
+binding = "DB"
+database_name = "jurnal7kaih-db"
+database_id = "ISI_DENGAN_DATABASE_ID_ASLI"
+
+# Secrets (JANGAN ditulis di sini — set lewat `wrangler pages secret put`):
+# GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN,
+# GOOGLE_DRIVE_FOLDER_ID, AUTH_SECRET

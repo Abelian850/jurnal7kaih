@@ -1,0 +1,17 @@
+name = "jurnal7kaih-cleanup"
+main = "src/index.ts"
+compatibility_date = "2026-01-01"
+
+# Jalan tiap tanggal 1, jam 00:00 UTC (= 07:00 WIB)
+[triggers]
+crons = ["0 0 1 * *"]
+
+# WAJIB pakai database_id YANG SAMA dengan project Next.js utama —
+# worker ini baca/tulis ke database yang sama, bukan database terpisah.
+[[d1_databases]]
+binding = "DB"
+database_name = "jurnal7kaih-db"
+database_id = "ISI_DENGAN_DATABASE_ID_ASLI_YANG_SAMA"
+
+# Secrets (set lewat `wrangler secret put`, dari dalam folder cleanup-worker/):
+# GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN
